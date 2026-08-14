@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Canva Teardown</title>
+<style>
+  @page { size: 13.333in 7.5in; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #1c1d21;
+    background: #ffffff;
+  }
+  .slide {
+    width: 13.333in;
+    height: 7.5in;
+    padding: 0.7in 0.9in;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .slide:last-child { page-break-after: auto; }
+
+  .kicker {
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7b3ff2;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 40px;
+    margin: 0 0 6px 0;
+    font-weight: 800;
+    color: #17171a;
+    line-height: 1.15;
+  }
+  h2 {
+    font-size: 30px;
+    margin: 0 0 22px 0;
+    font-weight: 800;
+    color: #17171a;
+  }
+  .subtitle {
+    font-size: 18px;
+    color: #63636d;
+    margin-bottom: 0;
+  }
+  .accent-bar {
+    width: 60px; height: 6px; border-radius: 3px;
+    background: linear-gradient(90deg,#7b3ff2,#00c4cc);
+    margin: 18px 0 26px 0;
+  }
+  .content { flex: 1; }
+  ul.bullets { margin: 0; padding-left: 22px; }
+  ul.bullets li { font-size: 19px; margin-bottom: 12px; line-height: 1.45; }
+  ul.bullets li b { color: #17171a; }
+
+  .footer {
+    position: absolute; bottom: 0.45in; left: 0.9in; right: 0.9in;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: #a3a3ad;
+  }
+  .logo-mark {
+    font-weight: 800; letter-spacing: 1px; color: #7b3ff2;
+  }
+
+  /* Title slide */
+  .title-slide {
+    background: linear-gradient(135deg,#7b3ff2 0%, #00c4cc 100%);
+    color: #fff;
+    justify-content: center;
+  }
+  .title-slide .kicker { color: #e3d9ff; }
+  .title-slide h1 { color: #fff; font-size: 56px; }
+  .title-slide .subtitle { color: #eae6ff; font-size: 20px; max-width: 9in; }
+  .title-slide .accent-bar { background: #fff; opacity: .6; }
+
+  /* Timeline */
+  .timeline { display: flex; flex-direction: column; gap: 10px; }
+  .t-row { display: grid; grid-template-columns: 100px 1fr 1.3fr; gap: 18px; align-items: start;
+    border-bottom: 1px solid #ececf1; padding-bottom: 10px; }
+  .t-row:last-child { border-bottom: none; }
+  .t-year { font-size: 22px; font-weight: 800; color: #7b3ff2; }
+  .t-update { font-size: 15.5px; color: #3a3a42; line-height: 1.35; }
+  .t-principle { font-size: 15.5px; color: #17171a; font-weight: 700; background: #f4f0ff; padding: 6px 10px; border-radius: 8px; }
+
+  /* two column */
+  .cols { display: flex; gap: 40px; flex: 1; }
+  .col { flex: 1; }
+  .col h3 { font-size: 19px; margin: 0 0 10px 0; color: #7b3ff2; }
+  .card { background: #f7f6fb; border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; }
+  .card p { margin: 0; font-size: 15.5px; line-height: 1.5; color: #3a3a42; }
+  .card .label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #7b3ff2; font-weight: 700; margin-bottom: 6px; }
+
+  table.jtbd { width: 100%; border-collapse: collapse; font-size: 15px; }
+  table.jtbd th { text-align: left; background: #7b3ff2; color: #fff; padding: 10px 14px; font-size: 14px; }
+  table.jtbd td { padding: 12px 14px; vertical-align: top; border-bottom: 1px solid #ececf1; line-height: 1.4; }
+  table.jtbd tr:nth-child(odd) td { background: #faf9fc; }
+
+  .forces { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: 1; }
+  .force-card { border-radius: 14px; padding: 16px 18px; }
+  .force-card h4 { margin: 0 0 8px 0; font-size: 16px; }
+  .force-card p { margin: 0; font-size: 14.5px; line-height: 1.45; }
+  .force-push { background: #fff1ee; } .force-push h4 { color: #e0522f; }
+  .force-pull { background: #eefaf3; } .force-pull h4 { color: #1f9d55; }
+  .force-anxiety { background: #fff8e6; } .force-anxiety h4 { color: #b8860b; }
+  .force-habit { background: #eef1ff; } .force-habit h4 { color: #4b4fd6; }
+
+  .predictions { display: flex; flex-direction: column; gap: 14px; flex: 1; justify-content: center; }
+  .pred { display: grid; grid-template-columns: 46px 1fr; gap: 16px; align-items: start; }
+  .pred .num { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg,#7b3ff2,#00c4cc); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; }
+  .pred h4 { margin: 0 0 4px 0; font-size: 17px; color: #17171a; }
+  .pred p { margin: 0; font-size: 14.5px; color: #52525c; line-height: 1.4; }
+
+  .end-slide { background: #17171a; color: #fff; justify-content: center; align-items: flex-start; }
+  .end-slide h1 { color: #fff; }
+  .end-slide .subtitle { color: #b8b8c2; }
+
+  .qlist { columns: 2; column-gap: 40px; font-size: 14.5px; line-height: 1.6; color: #3a3a42; }
+  .qlist li { break-inside: avoid; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+  <!-- 1. Title -->
+  <section class="slide title-slide">
+    <div class="kicker">Product Teardown</div>
+    <h1>Canva —<br>từ công cụ thiết kế đến<br>Agentic Creative Platform</h1>
+    <div class="accent-bar"></div>
+    <div class="subtitle">Dựng lại timeline các quyết định sản phẩm lớn, revert nguyên lý, phân tích tệp user &amp; JTBD, và dự đoán hướng đi 6–12 tháng tới.</div>
+  </section>
+
+  <!-- 2. Why Canva -->
+  <section class="slide">
+    <div class="kicker">Mở đầu</div>
+    <h2>Vì sao chọn Canva?</h2>
+    <div class="accent-bar"></div>
+    <div class="content">
+      <ul class="bullets">
+        <li>Không còn là công cụ thiết kế kéo-thả đơn thuần — đã tiến hoá qua nhiều thế hệ: <b>Design Tool → Visual Suite → AI-powered Work Platform → Agentic Creative Platform</b>.</li>
+        <li>Canva không xây AI như sản phẩm đứng riêng, mà liên tục gắn AI vào <b>workflow và dữ liệu người dùng đã có sẵn</b> trong hệ sinh thái.</li>
+        <li>Đủ 3 tiêu chí teardown: có AI đóng vai trò lớn, đủ dữ liệu công khai cho timeline dài hạn, use case &amp; JTBD rõ ràng.</li>
+      </ul>
+    </div>
+    <div class="footer"><span class="logo-mark">CANVA TEARDOWN</span><span>§0 — Bối cảnh</span></div>
+  </section>
+
+  <!-- 3. Timeline part 1 -->
+  <section class="slide">
+    <div class="kicker">§1 — Timeline</div>
+    <h2>6 mốc quyết định sản phẩm lớn (2013–2026)</h2>
+    <div class="accent-bar"></div>
+    <div class="content timeline">
+      <div class="t-row"><div class="t-year">2013</div><div class="t-update">Ra mắt nền tảng drag-and-drop, template &amp; thư viện asset — dân chủ hoá thiết kế cho non-designer.</div><div class="t-principle">x10 usability qua abstraction</div></div>
+      <div class="t-row"><div class="t-year">2022</div><div class="t-update">Đưa generative AI vào workflow: Text to Image, Magic Write.</div><div class="t-principle">AI as feature, không phải destination</div></div>
+      <div class="t-row"><div class="t-year">2023</div><div class="t-update">Ra mắt Magic Studio — hợp nhất Magic Design/Edit/Media/Switch thành một cửa vào.</div><div class="t-principle">Workflow moat &gt; raw model</div></div>
+      <div class="t-row"><div class="t-year">2024</div><div class="t-update">"Redesigned for work" — đẩy mạnh Canva Enterprise, Brand, collaboration.</div><div class="t-principle">Segment expansion + lock-in</div></div>
+      <div class="t-row"><div class="t-year">2025</div><div class="t-update">Visual Suite 2.0: Canva Sheets, Canva AI, Canva Code, Magic Studio at Scale.</div><div class="t-principle">From tool → system of work</div></div>
+      <div class="t-row"><div class="t-year">2026</div><div class="t-update">Canva AI 2.0 — Design Model riêng, agentic editing, persistent memory, connectors.</div><div class="t-principle">Context + action = agent moat</div></div>
+    </div>
+    <div class="footer"><span class="logo-mark">CANVA TEARDOWN</span><span>§1 — Timeline</span></div>
+  </section>
+
+  <!-- 4. Why these milestones -->
+  <section class="slide">
+    <div class="kicker">§1 — Timeline</div>
+    <h2>Vì sao chọn đúng 6 mốc này?</h2>
+    <div class="accent-bar"></div>
+    <div class="content">
+      <ul class="bullets">
+        <li>Mỗi mốc thay đổi ít nhất 1 trong 3 trục: <b>Canva dành cho ai · Canva giải quyết job nào · Canva nằm ở đâu trong workflow</b>.</li>
+        <li>Loại bỏ các bản vá tính năng nhỏ (redesign gallery, thêm font, nâng cấp Magic Eraser...) — vì chỉ cải thiện capability, không đổi nguyên lý sản phẩm.</li>
+        <li>Ngược lại, Canva Enterprise hay Canva AI 2.0 thay đổi cả <b>segment</b> lẫn <b>định nghĩa sản phẩm</b> — xứng đáng là cột mốc.</li>
+      </ul>
+    </div>
+    <div class="footer"><span class="logo-mark">CANVA TEARDOWN</span><span>§1 — Timeline</span></div>
+  </section>
+
+  <!-- 5. User & JTBD -->
+  <section class="slide">
+    <div class="kicker">§2 — Tệp user &amp; JTBD</div>
+    <h2>Từ cá nhân không chuyên đến cả tổ chức</h2>
+    <div class="accent-bar"></div>
+    <div class="content">
+      <table class="jtbd">
+        <tr><th></th><th>Early adopters</th><th>User hiện tại</th></tr>
+        <tr><td><b>Đặc điểm</b></td><td>Sinh viên, freelancer, blogger, founder nhỏ — không chuyên môn design</td><td>Knowledge worker, marketer, sales, HR, creative team, enterprise</td></tr>
+        <tr><td><b>JTBD chính</b></td><td>"Giúp tôi tạo thiết kế đẹp mà không cần học Photoshop"</td><td>"Giúp tôi biến ý tưởng/brief thành toàn bộ content đúng brand, nhanh nhất"</td></tr>
+        <tr><td><b>Cách cũ</b></td><td>Photoshop, PowerPoint, thuê designer</td><td>Adobe + Workspace + nhiều AI tool + agency rời rạc</td></tr>
+      </table>
+    </div>
+    <div class="footer"><span class="logo-mark">CANVA TEARDOWN</span><span>§2 — Tệp user &amp; JTBD</span></div>
+  </section>
+
+  <!-- 6. Switching cost -->
+  <section class="slide">
+    <div class="kicker">§2 — Tệp user &amp; JTBD</div>
+    <h2>Switching cost — map theo 4 forces</h2>
+    <div class="accent-bar"></div>
+    <div class="forces">
+      <div class="force-card force-push"><h4>Push</h4><p>Workflow cũ phân mảnh: ChatGPT viết, Midjourney tạo ảnh, Adobe edit, Buffer schedule — liên tục copy/upload/resize, khó giữ brand nhất quán.</p></div>
+      <div class="force-card force-pull"><h4>Pull</h4><p>Speed + simplicity + all-in-one: text, design, data, video, code, publish nằm chung workflow; AI ngày càng hiểu brand &amp; project history.</p></div>
+      <div class="force-card force-anxiety"><h4>Anxiety</h4><p>Đặc biệt với pro designer: AI output generic, ít kiểm soát, lo ngại brand/IP/privacy — Canva Shield &amp; enterprise security ra đời để giảm nỗi lo này.</p></div>
+      <div class="force-card force-habit"><h4>Habit / Lock-in</h4><p>Brand Kit, template, design history, teams, approvals tích luỹ nhiều năm — nếu AI có thêm persistent memory, switching cost còn lớn hơn nữa.</p></div>
+    </div>
+    <div class="footer"><span class="logo-mark">CANVA TEARDOWN</span><span>§2 — Switching cost</span></div>
+  </section>
+
+  <!-- 7. Predictions -->
+  <section class="slide">
+    <div class="kicker">§3 — Dự đoán 6–12 tháng tới</div>
+    <h2>Ba hướng đi tiếp theo</h2>
+    <div class="accent-bar"></div>
+    <div class="predictions">
+      <div class="pred"><div class="num">1</div><div><h4>Mở rộng tính năng — AI Agent thực thi trọn workflow</h4><p>Từ "creative assistant" thành agent tự hoàn thành campaign xuyên nhiều bước (research → data → design → schedule), dựa trên connectors &amp; persistent memory đã có ở Canva AI 2.0.</p></div></div>
+      <div class="pred"><div class="num">2</div><div><h4>Mở rộng segment — Verticalize theo ngành</h4><p>Canva for Marketing / Sales / HR thay vì một Visual Suite chung — nối tiếp đà "horizontal platform → vertical workflow" từ roadmap enterprise hiện tại.</p></div></div>
+      <div class="pred"><div class="num">3</div><div><h4>Mô hình kiếm tiền — Usage/tier thay vì chỉ seat-based</h4><p>Compute cost tăng khi workflow đi từ 1 prompt → 1 goal thực thi nhiều bước; pricing dịch dần sang subscription + AI allowance + premium model usage.</p></div></div>
+    </div>
+    <div class="footer"><span class="logo-mark">CANVA TEARDOWN</span><span>§3 — Dự đoán</span></div>
+  </section>
+
+  <!-- 8. Conclusion -->
+  <section class="slide">
+    <div class="kicker">Kết luận</div>
+    <h2>Bài học sản phẩm lớn nhất</h2>
+    <div class="accent-bar"></div>
+    <div class="content">
+      <ul class="bullets">
+        <li>Ba thời kỳ: <b>2013–2021</b> Democratize Design → <b>2022–2025</b> AI + Visual Work Suite → <b>2026→</b> Agentic Creative Platform.</li>
+        <li>Bài học không phải "thêm AI vào sản phẩm", mà là <b>dùng AI để mở rộng JTBD mà sản phẩm sở hữu</b> — từ chỉ "Design" đến cả chuỗi Idea → Research → Data → Design → Code → Publish.</li>
+        <li>Moat quan trọng nhất của Canva không phải một AI model cụ thể, mà là <b>workflow + brand context + user data + collaboration + distribution</b>.</li>
+      </ul>
+    </div>
+    <div class="footer"><span class="logo-mark">CANVA TEARDOWN</span><span>Kết luận</span></div>
+  </section>
+
+  <!-- 9. Discussion prep -->
+  <section class="slide">
+    <div class="kicker">Chuẩn bị thảo luận</div>
+    <h2>Câu hỏi phản biện nên sẵn sàng</h2>
+    <div class="accent-bar"></div>
+    <div class="content">
+      <ol class="qlist">
+        <li>Moat thật của Canva nằm ở AI model hay ở workflow?</li>
+        <li>Nếu OpenAI/Google có design model tốt hơn, Canva có mất lợi thế?</li>
+        <li>Vì sao Canva phải đi lên enterprise?</li>
+        <li>Persistent memory tạo switching cost như thế nào?</li>
+        <li>Canva Code có thực sự mở được segment developer?</li>
+        <li>Verticalization có mâu thuẫn với "everyone can design"?</li>
+        <li>Dự đoán nào trong 3 dự đoán có xác suất sai cao nhất?</li>
+        <li>Big Tech có thể copy Canva ở điểm nào?</li>
+      </ol>
+    </div>
+    <div class="footer"><span class="logo-mark">CANVA TEARDOWN</span><span>Thảo luận</span></div>
+  </section>
+
+  <!-- 10. Thank you -->
+  <section class="slide end-slide">
+    <div class="kicker">Cảm ơn</div>
+    <h1>Hỏi &amp; Đáp</h1>
+    <div class="accent-bar"></div>
+    <div class="subtitle">Chi tiết đầy đủ: memo.md — timeline, JTBD, switching cost, dự đoán &amp; AI log.</div>
+  </section>
+
+</body>
+</html>
