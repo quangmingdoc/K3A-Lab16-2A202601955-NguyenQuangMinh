@@ -1,7 +1,7 @@
 # Memo Teardown — CANVA
 
-**Nhóm:** …  
-**Thành viên:** …
+**Nhóm:** canvaA  
+**Thành viên:** Lê Văn Huy (Trưởng nhóm, 2A202601235) · Hoàng Văn Thành (2A202601428) · Nguyễn Quang Minh (2A202601955) · Nguyễn Minh Hoàng (2A202601609)
 
 ## Vì sao chọn Canva?
 
@@ -15,14 +15,14 @@ Canva phù hợp để teardown vì đây không còn chỉ là một công cụ
 
 Bài yêu cầu chọn **6–8 cột mốc thật sự là quyết định sản phẩm**, không phải liệt kê toàn bộ changelog.
 
-| Thời điểm | Cập nhật                                                                                                                                | Context lúc đó                                                                                                         | Nguyên lý                                                                                                              |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| **2013**  | Canva chính thức ra mắt nền tảng thiết kế web với drag-and-drop, template và thư viện asset ([Canva Newsroom — 10-year timeline](https://www.canva.com/newsroom/news/canva-10-year-timeline/), [Wikipedia](https://en.wikipedia.org/wiki/Canva))                                             | Công cụ chuyên nghiệp như Photoshop/Illustrator có learning curve cao; thiết kế vẫn chủ yếu gắn với desktop            | **x10 bằng abstraction:** ẩn sự phức tạp kỹ thuật và biến design thành thao tác kéo-thả                                |
-| **2022**  | Canva bắt đầu đưa generative AI vào workflow thông qua **Text to Image** và **Magic Write** ([Canva Newsroom — Magic Write](https://www.canva.com/newsroom/news/magic-write-ai-text-generator/), [Forbes](https://www.forbes.com/sites/johanmoreno/2022/12/07/canva-opens-up-access-to-docs-in-beta-adds-magic-write-generative-ai-copywriting-tools/))                                             | Generative AI bùng nổ, đặc biệt sau làn sóng text/image generation                                                     | **AI as feature, not destination:** đưa AI vào nơi user đã tạo nội dung thay vì buộc họ chuyển sang công cụ AI riêng   |
-| **2023**  | Ra mắt **Magic Studio**, Magic Design, Magic Edit, Magic Media, Magic Switch… ([Canva Newsroom — Magic Studio](https://www.canva.com/newsroom/news/magic-studio/), [Voicebot.ai](https://voicebot.ai/2023/10/05/canvas-new-magic-studio-pulls-enormous-generative-ai-toolkit-and-200m-creator-fund-out-of-a-hat/))                                                           | AI tools lúc này đang bị phân mảnh: viết ở một app, tạo ảnh ở app khác, edit ở app khác                                | **Wrapper → workflow moat:** gom nhiều AI capability thành một workflow thống nhất trên nền dữ liệu/template của Canva |
-| **2024**  | Canva “redesigned for work”, đẩy mạnh Canva Enterprise, Brand, collaboration và AI cho tổ chức ([Canva Newsroom — Canva for Work](https://www.canva.com/newsroom/news/canva-for-work/), [TechRadar](https://www.techradar.com/pro/canva-has-a-new-plan-as-it-continues-to-court-big-business))                                          | Canva bắt đầu dịch từ người dùng cá nhân/SMB sang workplace và enterprise                                              | **Segment expansion + workflow lock-in:** từ “tool thiết kế” thành hệ điều hành visual communication của tổ chức       |
-| **2025**  | Visual Suite 2.0: **Canva Sheets, Canva AI, Canva Code, Magic Studio at Scale** ([Business Wire](https://www.businesswire.com/news/home/20250410082173/en/Canvas-Biggest-Launch-Yet-Introduces-Visual-Suite-2.0-to-Redefine-Creativity-and-Productivity), [Constellation Research](https://www.constellationr.com/blog-news/insights/canva-launches-visual-suite-20-adds-canva-sheets-canva-code))                                                         | AI chuyển từ “generate một asset” sang thực hiện workflow nhiều bước; doanh nghiệp muốn tự động hóa content at scale   | **From tool → system of work:** dữ liệu, design và AI bắt đầu nằm chung một nơi                                        |
-| **2026**  | Ra mắt **Canva AI 2.0**, Canva Design Model, agentic editing, persistent memory, connectors, scheduling, web research và Canva Code 2.0 ([Canva Newsroom — Canva AI 2.0](https://www.canva.com/newsroom/news/canva-create-2026-ai/), [Forbes](https://www.forbes.com/sites/marksparrow/2026/04/16/canva-ai-20-launches-with-new-features-and-conversational-ai/)) | AI agent bắt đầu thay thế mô hình “chat rồi copy-paste”; cạnh tranh chuyển sang AI có context và có khả năng hành động | **Agent + proprietary context = moat:** AI hiểu brand, project history, workflow và có thể hành động xuyên công cụ     |
+| Thời điểm | Cập nhật                                                                                                                                                                                                                                                                                                                                                                                           | Context lúc đó                                                                                                         | Nguyên lý                                                                                                              |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **2013**  | Canva chính thức ra mắt nền tảng thiết kế web với drag-and-drop, template và thư viện asset ([Canva Newsroom — 10-year timeline](https://www.canva.com/newsroom/news/canva-10-year-timeline/), [Wikipedia](https://en.wikipedia.org/wiki/Canva))                                                                                                                                                   | Công cụ chuyên nghiệp như Photoshop/Illustrator có learning curve cao; thiết kế vẫn chủ yếu gắn với desktop            | **x10 bằng abstraction:** ẩn sự phức tạp kỹ thuật và biến design thành thao tác kéo-thả                                |
+| **2022**  | Canva bắt đầu đưa generative AI vào workflow thông qua **Text to Image** và **Magic Write** ([Canva Newsroom — Magic Write](https://www.canva.com/newsroom/news/magic-write-ai-text-generator/), [Forbes](https://www.forbes.com/sites/johanmoreno/2022/12/07/canva-opens-up-access-to-docs-in-beta-adds-magic-write-generative-ai-copywriting-tools/))                                            | Generative AI bùng nổ, đặc biệt sau làn sóng text/image generation                                                     | **AI as feature, not destination:** đưa AI vào nơi user đã tạo nội dung thay vì buộc họ chuyển sang công cụ AI riêng   |
+| **2023**  | Ra mắt **Magic Studio**, Magic Design, Magic Edit, Magic Media, Magic Switch… ([Canva Newsroom — Magic Studio](https://www.canva.com/newsroom/news/magic-studio/), [Voicebot.ai](https://voicebot.ai/2023/10/05/canvas-new-magic-studio-pulls-enormous-generative-ai-toolkit-and-200m-creator-fund-out-of-a-hat/))                                                                                 | AI tools lúc này đang bị phân mảnh: viết ở một app, tạo ảnh ở app khác, edit ở app khác                                | **Wrapper → workflow moat:** gom nhiều AI capability thành một workflow thống nhất trên nền dữ liệu/template của Canva |
+| **2024**  | Canva “redesigned for work”, đẩy mạnh Canva Enterprise, Brand, collaboration và AI cho tổ chức ([Canva Newsroom — Canva for Work](https://www.canva.com/newsroom/news/canva-for-work/), [TechRadar](https://www.techradar.com/pro/canva-has-a-new-plan-as-it-continues-to-court-big-business))                                                                                                     | Canva bắt đầu dịch từ người dùng cá nhân/SMB sang workplace và enterprise                                              | **Segment expansion + workflow lock-in:** từ “tool thiết kế” thành hệ điều hành visual communication của tổ chức       |
+| **2025**  | Visual Suite 2.0: **Canva Sheets, Canva AI, Canva Code, Magic Studio at Scale** ([Business Wire](https://www.businesswire.com/news/home/20250410082173/en/Canvas-Biggest-Launch-Yet-Introduces-Visual-Suite-2.0-to-Redefine-Creativity-and-Productivity), [Constellation Research](https://www.constellationr.com/blog-news/insights/canva-launches-visual-suite-20-adds-canva-sheets-canva-code)) | AI chuyển từ “generate một asset” sang thực hiện workflow nhiều bước; doanh nghiệp muốn tự động hóa content at scale   | **From tool → system of work:** dữ liệu, design và AI bắt đầu nằm chung một nơi                                        |
+| **2026**  | Ra mắt **Canva AI 2.0**, Canva Design Model, agentic editing, persistent memory, connectors, scheduling, web research và Canva Code 2.0 ([Canva Newsroom — Canva AI 2.0](https://www.canva.com/newsroom/news/canva-create-2026-ai/), [Forbes](https://www.forbes.com/sites/marksparrow/2026/04/16/canva-ai-20-launches-with-new-features-and-conversational-ai/))                                  | AI agent bắt đầu thay thế mô hình “chat rồi copy-paste”; cạnh tranh chuyển sang AI có context và có khả năng hành động | **Agent + proprietary context = moat:** AI hiểu brand, project history, workflow và có thể hành động xuyên công cụ     |
 
 ### Mốc 1 — 2013: Democratize Design
 
@@ -322,6 +322,8 @@ Nhóm không nên chọn mọi lần Canva thêm một AI feature nhỏ. Sáu m�
 
 Ví dụ, một nâng cấp nhỏ của Magic Eraser không đủ lớn vì nó chỉ cải thiện capability. Ngược lại, Canva Enterprise hoặc Canva AI 2.0 thay đổi cả segment và định nghĩa sản phẩm.
 
+**Mốc đã cân nhắc nhưng loại ra:** (1) Canva for Education (2020) — bị loại vì đây là mở rộng kênh phân phối/go-to-market, không đổi nguyên lý sản phẩm cốt lõi; (2) mua lại Kaleido (2021, công ty visual AI) — bị loại vì tác động chủ yếu là chuẩn bị hạ tầng nội bộ, chưa tạo ra thay đổi trải nghiệm mà user cảm nhận được trực tiếp; (3) mua lại Affinity/Serif (03/2024) — cân nhắc đưa vào vì đây là bước mở segment professional designer khá lớn, nhưng nhóm quyết định gộp chung tinh thần vào mốc "2024 redesigned for work" để tránh trùng lặp nguyên lý "segment expansion" đã có.
+
 ---
 
 # §2. Tệp user & JTBD
@@ -580,7 +582,7 @@ Các dự đoán dưới đây là **suy luận**, không phải thông tin Canv
 
 ### Lập luận
 
-Canva AI 2.0 đã có connectors, scheduling, web research, Brand Intelligence và persistent memory; đồng thời Canva đang mở rộng API/Data Connectors cho developer. Vì vậy bước tiếp theo hợp lý là agent tự hoàn thành workflow xuyên nhiều ứng dụng thay vì chỉ tạo asset.
+Canva AI 2.0 (**mốc 2026, §1**) đã có connectors, scheduling, web research, Brand Intelligence và persistent memory; đồng thời Canva đang mở rộng API/Data Connectors cho developer. Vì vậy bước tiếp theo hợp lý là agent tự hoàn thành workflow xuyên nhiều ứng dụng thay vì chỉ tạo asset — đúng với JTBD của user hiện tại ở **§2**: "đi từ brief/data đến nội dung hoàn chỉnh... mà không phải nhảy qua nhiều công cụ".
 
 Ví dụ:
 
@@ -614,7 +616,7 @@ research
 
 ### Lập luận
 
-Enterprise roadmap hiện đã nhắc đến vertical-specific solutions, deeper analytics, stronger AI-powered brand governance và data connectors.
+Enterprise roadmap hiện đã nhắc đến vertical-specific solutions, deeper analytics, stronger AI-powered brand governance và data connectors — nối tiếp trực tiếp **mốc 2024, §1** (Canva Enterprise/Work Kits theo phòng ban: HR, Marketing, Sales) và dịch chuyển tệp user đã ghi ở **§2** (từ cá nhân sang "đội marketing/brand doanh nghiệp, agency").
 
 Có thể xuất hiện những experience như:
 
@@ -653,7 +655,7 @@ Canva for HR
 
 ### Lập luận
 
-Canva hiện đã phân biệt các allowance AI giữa Free, Pro, Business và Enterprise, đồng thời có AI Pass để mua thêm hạn mức AI.
+Canva hiện đã phân biệt các allowance AI giữa Free, Pro, Business và Enterprise, đồng thời có AI Pass để mua thêm hạn mức AI. Đây là hệ quả trực tiếp của việc AI đi từ "generate 1 asset" (**mốc 2022–2023, §1**) sang "thực thi cả workflow nhiều bước" (**mốc 2025–2026, §1**) — chi phí compute mỗi request tăng mạnh nên mô hình seat-based thuần tuý không còn phản ánh đúng giá trị mà user hiện tại (§2) đang tiêu thụ.
 
 Khi workflow chuyển từ:
 
@@ -729,17 +731,17 @@ tốt hơn đáng kể so với generic agent.
 
 Bài yêu cầu khai rõ phần AI làm và phần nhóm tự kiểm chứng/phán đoán; việc dùng nhiều AI không phải vấn đề, vấn đề là không kiểm chứng.
 
-| Việc                                                 | AI làm hay nhóm làm? | Nhóm kiểm chứng/phán đoán lại thế nào?                                   |
-| ---------------------------------------------------- | -------------------- | ------------------------------------------------------------------------ |
-| Tìm các mốc lịch sử lớn của Canva                    | AI hỗ trợ tổng hợp   | Nhóm mở và đối chiếu Canva Newsroom cho từng mốc                         |
-| Rút 6 mốc từ nhiều update                            | AI + nhóm            | Nhóm loại các feature release nhỏ, chỉ giữ product decisions             |
-| Tổng hợp Magic Studio / Canva AI                     | AI                   | Đối chiếu với nguồn Canva chính thức                                     |
-| Phân tích nguyên lý x10 / workflow moat / agent moat | AI hỗ trợ            | Nhóm tự tranh luận xem nguyên lý nào giải thích tốt nhất từng quyết định |
-| Phân tích JTBD                                       | AI hỗ trợ            | Nhóm viết lại theo “việc user muốn hoàn thành”, tránh ghi feature        |
-| Phân tích switching cost                             | Nhóm + AI            | Nhóm đối chiếu với workflow thực tế khi dùng Canva                       |
-| Tạo 3 prediction                                     | AI đề xuất candidate | Nhóm chọn và chịu trách nhiệm với 3 prediction cuối                      |
-| Pricing/AI allowance                                 | AI tìm thông tin     | Nhóm kiểm tra trực tiếp pricing hiện hành của Canva                      |
-| Viết memo                                            | AI hỗ trợ cấu trúc   | Nhóm đọc lại, sửa luận điểm và chịu trách nhiệm nội dung                 |
+| Việc                                                                   | AI làm hay nhóm làm?    | Nhóm kiểm chứng/phán đoán lại thế nào?                                                                                                                                         |
+| ---------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Tìm các mốc lịch sử lớn của Canva                                      | AI hỗ trợ tổng hợp      | Nhóm mở và đối chiếu Canva Newsroom cho từng mốc                                                                                                                               |
+| Rút 6 mốc từ nhiều update                                              | AI + nhóm               | Nhóm loại các feature release nhỏ, chỉ giữ product decisions                                                                                                                   |
+| Tổng hợp Magic Studio / Canva AI                                       | AI                      | Đối chiếu với nguồn Canva chính thức                                                                                                                                           |
+| Phân tích nguyên lý x10 / workflow moat / agent moat                   | AI hỗ trợ               | Nhóm tự tranh luận xem nguyên lý nào giải thích tốt nhất từng quyết định                                                                                                       |
+| Phân tích JTBD                                                         | AI hỗ trợ               | Nhóm viết lại theo “việc user muốn hoàn thành”, tránh ghi feature                                                                                                              |
+| Phân tích switching cost                                               | Nhóm + AI               | Nhóm đối chiếu với workflow thực tế khi dùng Canva                                                                                                                             |
+| Tạo 3 prediction                                                       | AI đề xuất candidate    | Nhóm chọn và chịu trách nhiệm với 3 prediction cuối                                                                                                                            |
+| Pricing/AI allowance                                                   | AI tìm thông tin        | Nhóm kiểm tra trực tiếp pricing hiện hành của Canva                                                                                                                            |
+| Viết memo                                                              | AI hỗ trợ cấu trúc      | Nhóm đọc lại, sửa luận điểm và chịu trách nhiệm nội dung                                                                                                                       |
 | Bổ sung link nguồn thật cho cả 6 mốc ở §1 (trước đó không có link nào) | AI (Claude, web search) | Mỗi mốc lấy 1 nguồn chính chủ (Canva Newsroom) + 1 nguồn báo chí độc lập (Forbes/TechRadar/Business Wire/Voicebot.ai) để đối chiếu ngày tháng khớp nhau trước khi dán vào bảng |
 
 ---
